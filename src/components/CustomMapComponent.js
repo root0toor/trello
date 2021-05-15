@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect } from 'react';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import "../css/map.css";
 import fetchFakeMapData from "../api/fetchFakeMapData";
@@ -7,9 +7,9 @@ mapboxgl.accessToken = 'pk.eyJ1Ijoibml0aGlua25qYWluIiwiYSI6ImNrb2xjaDlnZTA0NmUyb
 
 export default function CustomMapComponent(props) {
     const mapContainerRef = useRef(null);
-    const [lng] = useState(135.6387);
-    const [lat] = useState(-25.6170);
-    const [zoom] = useState(3);
+    const lng = 135.6387;
+    const lat = -25.6170;
+    const zoom = 3;
 
     useEffect(() => {
         const map = new mapboxgl.Map({
@@ -58,7 +58,7 @@ export default function CustomMapComponent(props) {
             });
         });
         return () => map.remove();
-    }, [lng, lat, zoom, props.funcToChange, ]);
+    }, [lat]);
 
     return (
         <div ref={mapContainerRef} className="map-container" />
