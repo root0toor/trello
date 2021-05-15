@@ -1,8 +1,29 @@
-.App {
-  text-align: center;
+body {
+  background: #EEF2F7;
 }
 
-.App-logo {
+.row {
+  display: flex;
+}
+
+.box {
+  height: 350px;
+  box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 4%), 0 6.7px 5.3px rgb(0 0 0 / 4%), 0 12.5px 10px rgb(0 0 0 / 4%), 0 22.3px 17.9px rgb(0 0 0 / 4%), 0 41.8px 33.4px rgb(0 0 0 / 4%), 0 100px 80px rgb(0 0 0 / 4%);
+  border-radius: 5px;
+}
+
+.chart-div-container {
+  background: white;
+  width: 50%;
+  margin: 20px;
+}
+
+.map-div-container {
+  width: 50%;
+  margin: 20px;
+}
+
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -35,4 +56,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
