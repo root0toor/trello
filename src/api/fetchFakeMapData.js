@@ -76,7 +76,7 @@ const fetchFakeBarChartData = (labels, data) => {
           borderWidth: 1,
         },
       ],
-    }, "options": {
+    }, "optionsLocal": {
       indexAxis: 'y',
       // Elements options apply to all of the options unless overridden in a dataset
       // In this case, we are setting the border of each horizontal bar to be 2px wide
@@ -88,7 +88,7 @@ const fetchFakeBarChartData = (labels, data) => {
       responsive: true,
       plugins: {
         legend: {
-          position: 'right',
+          position: 'bottom',
         },
         title: {
           display: true,

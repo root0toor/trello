@@ -10,13 +10,14 @@ import fetchFakeMapData, { fetchFakeBarChartData } from "./api/fetchFakeMapData"
 function App() {
   let [labels, setLabels] = useState(['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange']);
   let [data, setData] = useState([12, 19, 3, 5, 2, 3]);
-  const { horizontalBarData, options } = fetchFakeBarChartData(labels, data);
-  const flipOptions = { ...options, ...{ indexAxis: "x", plugins: { legend: { position: 'bottom', }, title: { display: true, text: 'Vertical Bar Chart' } } } };
+  let { horizontalBarData, optionsLocal } = fetchFakeBarChartData(labels, data);
+  let [options, setOptions] = useState(optionsLocal);
+  let [flipOptions, setflipOptions] = useState({ ...optionsLocal, ...{ indexAxis: "x", plugins: { legend: { position: 'bottom', }, title: { display: true, text: 'Vertical Bar Chart' } } } });
   return (
     <div className="App">
       <div className="row">
         <div className="map-div-container box">
-          <CustomMapComponent funcToChange={{ "labelsFunc": setLabels, "dataFunc": setData }} />
+          <CustomMapComponent funcToChange={{ "optionsFunc": setOptions, "dataFunc": setData }} />
         </div>
         <div className="chart-div-container box">
           <HorizontalBarChart data={horizontalBarData} options={flipOptions} />

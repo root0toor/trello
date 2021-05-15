@@ -11,6 +11,16 @@ const options = {
       },
     ],
   },
+  responsive: true,
+  plugins: {
+    legend: {
+      position: 'bottom',
+    },
+    title: {
+      display: true,
+      text: 'Line Bar Chart',
+    },
+  },
 };
 
 const LineChart = (props) => (
