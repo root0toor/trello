@@ -58,7 +58,7 @@ export default function CustomMapComponent(props) {
             });
         });
         return () => map.remove();
-    }, [lat, lng, props.funcToChange, zoom]);
+    }, [lng, lat, zoom, props.funcToChange, ]);
 
     return (
         <div ref={mapContainerRef} className="map-container" />

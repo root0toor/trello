@@ -8,13 +8,11 @@ import LineChart from "./components/LineChart";
 import { fetchFakeBarChartData } from "./api/fetchFakeMapData";
 
 function App() {
-  let [labels, setLabels] = useState([]);
-  setLabels(['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange']);
+  let [labels] = useState(['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange']);
   let [data, setData] = useState([12, 19, 3, 5, 2, 3]);
   let { horizontalBarData, optionsLocal } = fetchFakeBarChartData(labels, data);
   let [options, setOptions] = useState(optionsLocal);
-  let [flipOptions, setflipOptions] = useState({});
-  setflipOptions({ ...optionsLocal, ...{ indexAxis: "x", plugins: { legend: { position: 'bottom', }, title: { display: true, text: 'Vertical Bar Chart' } } } });
+  let [flipOptions] = useState({ ...optionsLocal, ...{ indexAxis: "x", plugins: { legend: { position: 'bottom', }, title: { display: true, text: 'Vertical Bar Chart' } } } });
   return (
     <div className="App">
       <div className="row">
