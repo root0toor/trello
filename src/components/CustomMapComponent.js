@@ -1,23 +1,23 @@
 import React, { useRef, useEffect, useState } from 'react';
 import mapboxgl from '!mapbox-gl'; // eslint-disable-line import/no-webpack-loader-syntax
 import "../css/map.css";
-import fetchFakeMapData, { fetchFakeBarChartData } from "../api/fetchFakeMapData";
+import fetchFakeMapData from "../api/fetchFakeMapData";
 
 mapboxgl.accessToken = 'pk.eyJ1Ijoibml0aGlua25qYWluIiwiYSI6ImNrb2xjaDlnZTA0NmUyb3F0NWZjZnp0ZzYifQ.TGtgvNrOO3DnuNwmdXeWvA';
 
 export default function CustomMapComponent(props) {
     const mapContainerRef = useRef(null);
-    const [lng, setLng] = useState(135.6387);
-    const [lat, setLat] = useState(-25.6170);
-    const [zoom, setZoom] = useState(3);
+    const [lng] = useState(135.6387);
+    const [lat] = useState(-25.6170);
+    const [zoom] = useState(3);
 
     useEffect(() => {
         const map = new mapboxgl.Map({
             container: mapContainerRef.current,
             // See style options here: https://docs.mapbox.com/api/maps/#styles
             style: "mapbox://styles/mapbox/streets-v11",
-            center: [134.0711, -27.0491],
-            zoom: 3.3
+            center: [lng, lat],
+            zoom: zoom
         });
 
         // add navigation control (zoom buttons)
@@ -58,7 +58,7 @@ export default function CustomMapComponent(props) {
             });
         });
         return () => map.remove();
-    }, []);
+    }, [lat, lng, props.funcToChange, zoom]);
 
     return (
         <div ref={mapContainerRef} className="map-container" />
