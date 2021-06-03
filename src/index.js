@@ -2,12 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
-import App from './App';
+// import App from './App';
+import Testhttp from './Testhttp';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <Testhttp />
   </React.StrictMode>,
   document.getElementById('root')
 );
