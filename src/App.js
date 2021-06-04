@@ -1,38 +1,35 @@
-// import logo from './logo.svg';
-import './css/App.css';
 import React, { useState } from 'react';
-import CustomMapComponent from "./components/CustomMapComponent";
-import HorizontalBarChart from "./components/HorizontalBarChart";
-// import DoughnutChart from "./components/DoughnutChart";
-import LineChart from "./components/LineChart";
-import { fetchFakeBarChartData } from "./api/fetchFakeMapData";
+import './css/app.css';
+import ListElement from './components/ListElement';
+import CardElement from './components/CardElement';
 
 function App() {
-  let [labels] = useState(['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange']);
-  let [data, setData] = useState([12, 19, 3, 5, 2, 3]);
-  let { horizontalBarData, optionsLocal } = fetchFakeBarChartData(labels, data);
-  let [options, setOptions] = useState(optionsLocal);
-  let [flipOptions] = useState({ ...optionsLocal, ...{ indexAxis: "x", plugins: { legend: { position: 'bottom', }, title: { display: true, text: 'Vertical Bar Chart' } } } });
+  const listArray = [
+    {
+      "title": "Teams"
+    },
+    {
+      "title": "Products"
+    },
+    {
+      "title": "Sprint"
+    }
+  ]
+  const [lists, setList] = useState(listArray);
+  const [cards, setCards] = useState([]);
   return (
-    <div className="App">
+    <div>
+      <h1 className="center-align">Trello Board</h1>
+      <hr />
       <div className="row">
-        <div className="map-div-container box">
-          <CustomMapComponent funcToChange={{ "optionsFunc": setOptions, "dataFunc": setData }} />
-        </div>
-        <div className="chart-div-container box">
-          <HorizontalBarChart data={horizontalBarData} options={flipOptions} />
-        </div>
-      </div>
-      <div className="row">
-        <div className="chart-div-container box">
-          <HorizontalBarChart data={horizontalBarData} options={options} />
-        </div>
-        <div className="chart-div-container box">
-          <LineChart data={horizontalBarData} />
-        </div>
+        {
+          lists.map(element => {
+            return <ListElement title={element["title"]} cardsData={cards} />
+          })
+        }
       </div>
     </div>
-  );
+  )
 }
 
 export default App;

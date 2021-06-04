@@ -1,61 +1,158 @@
-body {
-  background: #EEF2F7;
+.center-align{
+    text-align: center;
 }
 
-.row {
-  display: flex;
-  /* flex-direction: row;
-  flex-wrap: wrap; */
+*, *::before, *::after {
+    box-sizing: initial !important;
 }
 
-.box {
-  height: 350px;
-  box-shadow: 0 2.8px 2.2px rgb(0 0 0 / 4%), 0 6.7px 5.3px rgb(0 0 0 / 4%), 0 12.5px 10px rgb(0 0 0 / 4%), 0 22.3px 17.9px rgb(0 0 0 / 4%), 0 41.8px 33.4px rgb(0 0 0 / 4%), 0 100px 80px rgb(0 0 0 / 4%);
-  border-radius: 5px;
+.local-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
 
-.chart-div-container {
-  background: white;
-  width: 50%;
-  margin: 20px;
+.App {
+    text-align: center;
+    width: 95%;
+    margin: 15px auto;
 }
 
-.map-div-container {
-  width: 50%;
-  margin: 20px;
-}
-
-/* .App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* .container-drag {
+  text-align: center;
 } */
+
+.list {
+    width: 300px;
+    height: 90vh;
+    background-color: #FBF2ED;
+    border-style: solid;
+    border-width: 2px;
+    color: #45597E;
+    overflow: scroll;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: inline-block;
+    color: #45597E;
+    margin: 0;
+    text-align: center;
+    width:100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.align-left{
+    left: 0;
+}
+
+.header-left{
+    margin: 0px 10px 0px 10px;
+}
+
+.header-right{
+    margin: 0px 10px 0px 10px;
+    float: right;
+    cursor: pointer;
+}
+
+.task-header {
+    display: inline-block;
+    background-color: #DBE2F4;
+    color: #45597E;
+    width:100%;
+    height: 30px;
+    padding: 10px 0px 10px 0px;
+    font-weight: bold;
+    border-bottom-style: solid;
+    border-width: 2px;
+}
+
+/* .droppable {
+    position: absolute;
+    width: 150px;
+    height: 90vh;
+    right: 0;
+    background-color: #FBF2ED;
+    border-style: solid;
+    border-width: 2px;
+    color: #45597E;
+} */
+
+.draggable {
+    background-color: #80d5e0;
+    width: 90%;
+    height: auto;
+    /* min-height: 100px; */
+    margin: 10px auto;
+    border-style: solid;
+    border-width: 2px;
+    color: #45597E;
+    font-weight: bold;
+    /* overflow: auto; */
+    padding: 5px;
+}
+
+.card-title {
+    font-size: 20px;
+    text-align: start;
+}
+
+.card-content {
+    text-align: justify;
+}
+
+.round-button {
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+.bottom-button {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+    left: 46%;
+}
+
+.add-button {
+    margin: 10px auto;
+}
+
+input[type=text], textarea {
+    width: 90%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+  
+input[type=submit] {
+    width: 90%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+  
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.card-title {
+    margin-bottom: 0 !important;
+}
+
+.align-right{
+    float: right;
+    cursor: pointer;
+}
